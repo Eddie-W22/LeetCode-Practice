@@ -7,6 +7,7 @@ import java.util.Stack;
 class GenerateParenthesis {
 
     // 11/8/206
+    
     public static List<String> generateParenthesis(int n) {
         if (n <= 0 || n > 8) {
             throw new IllegalArgumentException("Parameter Violated: n must be between or equal to 1 and 8");
@@ -46,7 +47,9 @@ class GenerateParenthesis {
 
     //helper method 
     private static boolean isValid(StringBuilder curr) {
+        //stack is efficient
         Stack<Character> checker = new Stack<>();
+        //checking for correct number of open and closed parenthesis
         for (int i = 0; i < curr.length(); i++) {
             char sym = curr.charAt(i);
             if (sym == '(') {
